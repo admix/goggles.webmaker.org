@@ -26,29 +26,21 @@
         });
         switch(encodedStr){
         case "esc":
-          analytics.event("Track Event QUIT", {
-            label: "quited"
-          });
+          analytics.event("Quit");
           break;
         case "H":
-          analytics.event("Track Event HELP", {
-            label: "help"
-          });
+          analytics.event("Help");
           break;
         case "P":
-          analytics.event("Track Event PUBLISH", {
-            label: "publish"
+          analytics.event("Publish", {
+            label: "Tool bar icon"
           });
           break;
         case "&#8592;":
-          analytics.event("Track Event LEFT", {
-            label: "left"
-          });
+          analytics.event("Left");
           break;
         case "&#8594;":
-          analytics.event("Track Event RIGHT", {
-            label: "right"
-          });
+          analytics.event("Right");
           break;
         default:
           break;

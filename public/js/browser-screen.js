@@ -5,13 +5,11 @@
       localeInfo = document.getElementById("browser-screen").getAttribute("data-localeInfo");
 
   $(window).ready(function() {
-    require(["bower/webmaker-analytics/analytics.js"], function(analytics) {
+    require(['/bower/webmaker-analytics/analytics.js'], function(analytics) {
       $("#bookmarklet-link").attr("href", Webxray.getBookmarkletURL(hostname, localeInfo));
 
       $("#bookmarklet-link").on("click", function(event) {
-        analytics.event("Activate X-Ray Goggles", {
-          label: "activated"
-        });
+        analytics.event("Activate X-Ray Goggles");
         event.preventDefault();
         var script = document.createElement('script');
         script.src = '/webxray.js';

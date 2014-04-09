@@ -30,11 +30,11 @@ function DeferredPublish(html, originalURL, hackpubURL) {
 /**
  *
  */
-require(["jquery", "bower/webmaker-analytics/analytics.js"], function($, analytics) {
+require(["jquery", "/bower/webmaker-analytics/analytics.js"], function($, analytics) {
   function setupUI(html, originalURL, hackpubURL) {
     $(".to-internet.big-button").click(function() {
-      analytics.event("Publish to Internet", {
-        label: "published"
+      analytics.event("Publish", {
+        label: "Published to the Internet"
       });
       $("#choose-publish-method").fadeOut(function() {
         $("#to-internet").fadeIn(function() {
@@ -147,9 +147,9 @@ require(["jquery", "bower/webmaker-analytics/analytics.js"], function($, analyti
       $("#close").click(function() {
         window.parent.postMessage("close", "*");
       });
-      try{
+      try {
         var data = JSON.parse(event.data);
-      }catch(e){
+      } catch(e) {
         console.log("JSON.parse error: " + e);
       }
       // only run this is it's really a hackpub message. Otherwise, don't trigger.
