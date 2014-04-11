@@ -30,7 +30,7 @@ function DeferredPublish(html, originalURL, hackpubURL) {
 /**
  *
  */
-require(["jquery", "/bower/webmaker-analytics/analytics.js"], function($, analytics) {
+require(["analytics"], function(analytics) {
   function setupUI(html, originalURL, hackpubURL) {
     $(".to-internet.big-button").click(function() {
       analytics.event("Publish", {

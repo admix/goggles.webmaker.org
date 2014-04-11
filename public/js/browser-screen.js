@@ -1,11 +1,11 @@
 (function() {
-  "use strict";
+  'use-strict';
 
   var hostname = document.getElementById("browser-screen").getAttribute("data-hostname"),
       localeInfo = document.getElementById("browser-screen").getAttribute("data-localeInfo");
 
   $(window).ready(function() {
-    require(['/bower/webmaker-analytics/analytics.js'], function(analytics) {
+    require(['analytics'], function(analytics) {
       $("#bookmarklet-link").attr("href", Webxray.getBookmarkletURL(hostname, localeInfo));
 
       $("#bookmarklet-link").on("click", function(event) {
