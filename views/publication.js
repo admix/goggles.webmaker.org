@@ -1,6 +1,7 @@
 /**
  *
  */
+require(['jquery'], function($) {
 function DeferredTimeout(ms) {
   var deferred = jQuery.Deferred();
 
@@ -150,3 +151,4 @@ function init(html, originalURL, hackpubURL) {
     }
   }, false);
 }());
+});
