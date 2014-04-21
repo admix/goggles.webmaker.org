@@ -12,12 +12,20 @@ requirejs.config({
     'sso-override':     'sso-override',
     'auth-login':       'auth-login',
     'google-analytics': 'google-analytics',
-    'bookmarklet':      '/src/get-bookmarklet-url'
+    'bookmarklet':      '/src/get-bookmarklet-url',
+    'yepnope':          '../yepnope.1.0.2-min',
+    'publication':      '../publication'
+  },
+  shim: {
+    'publication': {
+      deps: ['jquery'],
+      exports: '$'
+    }
   }
 });
 
-require(['languages','browser-screen', 'auth-login', 'sso-override', 'bookmarklet', 'jquery'],
-  function (Languages) {
+require(['jquery', 'languages', 'browser-screen', 'auth-login', 'sso-override', 'bookmarklet', 'yepnope'],
+  function ($, Languages) {
     'use strict';
     // Call this when language picker element is ready.
     Languages.ready({ position: 'bottom', arrow: 'top' }, true);
